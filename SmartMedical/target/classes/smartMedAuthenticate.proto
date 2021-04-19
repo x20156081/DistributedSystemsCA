@@ -1,0 +1,27 @@
+syntax = "proto3";
+
+option java_multiple_files = true;
+option java_package = "dist.systems.ca";
+
+service Authenticate{
+	rpc CheckIn (CheckInRequest) returns (CheckInReply){}
+	rpc CheckOut (CheckOutRequest) returns (CheckOutReply){}
+}
+
+message CheckInRequest{
+	string name = 1;
+	int32 healthServiceNumber = 2;
+}
+
+message CheckInReply{
+	string replyMsg = 1;
+}
+
+message CheckOutRequest{
+	string name = 1;
+	int32 healthServiceNumber = 2;
+}
+
+message CheckOutReply{
+	string reply = 1;
+}
