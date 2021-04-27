@@ -1,0 +1,31 @@
+syntax = "proto3";
+
+option java_multiple_files = true;
+option java_package = "dist.systems.ca.service2";
+
+service MedWaitRoom{
+	rpc WaitingTimerStream (waitingRoomEntry) returns (stream waitTimeReply){}
+	rpc StreamClientDetails(stream answer) returns (acceptance){}
+}
+
+message waitingRoomEntry{
+	bool hasEnteredWaitRoom = 1;
+	string patientFirstName = 2;
+}
+
+message waitTimeReply{
+	string timeMsg = 1;
+	int32 minutes = 2;
+}
+
+message answer{
+	string retort = 1;
+	int32 answerNo = 2;
+	double metrics = 3;
+}
+
+message acceptance{
+	string serverReply = 1;
+	bool accepted =2;
+	double bmiRes = 3;
+}
