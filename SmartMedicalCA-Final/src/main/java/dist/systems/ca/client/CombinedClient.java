@@ -219,15 +219,7 @@ public class CombinedClient {
 				return;
 			} catch (InterruptedException e) {
 				e.printStackTrace();
-			}
-//			finally {
-//				try {
-//					channel2.shutdown().awaitTermination(5, TimeUnit.SECONDS);
-//				} catch (InterruptedException e) {
-//					e.printStackTrace();
-//				}
-//			}
-		
+			}		
 	
 		}
 	
